@@ -9,7 +9,7 @@ function escapeDate(date) {
     return NULL
   }
 
-  return date
+  return date.toISOString().replace(/\.[0-9]{1,3}Z$/, 'Z').replace('.', ':')
 }
 
 function escape(val) {

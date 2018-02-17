@@ -17,7 +17,9 @@ test('boolean values are converted to string', t => {
 })
 
 test('date are converted to YYYY-mm-dd HH:ii:ss', t => {
-  t.fail()
+  t.is(escape(new Date('December 17, 1995 03:24:00')), '1995-12-17T03:24:00Z')
+  t.is(escape(new Date('January 2, 2008 01:20:01')), '2008-01-02T01:20:01Z')
+  t.is(escape(new Date('fooo')), 'NULL')
 })
 
 test('string are escaped', t => {
