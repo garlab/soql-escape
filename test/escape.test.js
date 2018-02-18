@@ -2,18 +2,18 @@ import test from 'ava'
 import escape from '../src/escape'
 
 test('undefined and null are converted to NULL', t => {
-  t.is(escape(null), 'NULL');
-  t.is(escape(undefined), 'NULL');
+  t.is(escape(null), 'NULL')
+  t.is(escape(undefined), 'NULL')
 })
 
 test('number values are converted to string', t => {
-	t.is(escape(10), '10');
-  t.is(escape(3.14), '3.14');
-});
+  t.is(escape(10), '10')
+  t.is(escape(3.14), '3.14')
+})
 
 test('boolean values are converted to string', t => {
-  t.is(escape(true), 'true');
-  t.is(escape(false), 'false');
+  t.is(escape(true), 'true')
+  t.is(escape(false), 'false')
 })
 
 test('date are converted to YYYY-mm-dd HH:ii:ss', t => {
@@ -25,7 +25,7 @@ test('date are converted to YYYY-mm-dd HH:ii:ss', t => {
 test('string are escaped', t => {
   // See https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_quotedstringescapes.htm
   t.is(escape('foo'), `'foo'`)
-  t.is(escape('foo \''), `'foo \\\''`)
+  t.is(escape("foo '"), `'foo \\\''`)
   t.is(escape('new \r\n line'), `'new \\r\\n line'`)
   t.is(escape('white \t space'), `'white \\t space'`)
   t.is(escape('\bBell'), `'\\bBell'`)
@@ -43,7 +43,7 @@ test('objects are not supported', t => {
   })
 
   t.throws(() => {
-    escape({dummy: 'value'})
+    escape({ dummy: 'value' })
   })
 })
 

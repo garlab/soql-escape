@@ -7,29 +7,30 @@ const CHARS_ESCAPE_MAP = {
   '\b': '\\b',
   '\f': '\\f',
   '"': '\\"',
-  '\'':	'\\\'',
-  '\\':	'\\\\',
+  "'": "\\'",
+  '\\': '\\\\',
 }
 
 function escapeString(val) {
-  let chunkIndex = CHARS_ESCAPE_REGEX.lastIndex = 0;
-  let escapedVal = '';
-  let match;
+  let chunkIndex = (CHARS_ESCAPE_REGEX.lastIndex = 0)
+  let escapedVal = ''
+  let match
 
   while ((match = CHARS_ESCAPE_REGEX.exec(val))) {
-    escapedVal += val.slice(chunkIndex, match.index) + CHARS_ESCAPE_MAP[match[0]];
-    chunkIndex = CHARS_ESCAPE_REGEX.lastIndex;
+    escapedVal +=
+      val.slice(chunkIndex, match.index) + CHARS_ESCAPE_MAP[match[0]]
+    chunkIndex = CHARS_ESCAPE_REGEX.lastIndex
   }
 
   if (chunkIndex === 0) {
-    return `'${val}'`;
+    return `'${val}'`
   }
 
   if (chunkIndex < val.length) {
-    return `'${escapedVal}${val.slice(chunkIndex)}'`;
+    return `'${escapedVal}${val.slice(chunkIndex)}'`
   }
 
-  return `'${escapedVal}'`;
+  return `'${escapedVal}'`
 }
 
 function escapeDate(date) {
@@ -37,7 +38,10 @@ function escapeDate(date) {
     return NULL
   }
 
-  return date.toISOString().replace(/\.[0-9]{1,3}Z$/, 'Z').replace('.', ':')
+  return date
+    .toISOString()
+    .replace(/\.[0-9]{1,3}Z$/, 'Z')
+    .replace('.', ':')
 }
 
 function escape(val) {
