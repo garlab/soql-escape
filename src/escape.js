@@ -44,6 +44,18 @@ function escapeDate(date) {
     .replace('.', ':')
 }
 
+function escapeObject(obj) {
+  if (obj === null) {
+    return NULL
+  }
+
+  if (obj instanceof Date) {
+    return escapeDate(obj)
+  }
+
+  throw new Error('Objects are not supported')
+}
+
 function escape(val) {
   switch (typeof val) {
     case 'undefined':
@@ -56,16 +68,9 @@ function escape(val) {
     case 'function':
       return val()
     case 'object':
-      if (val === null) {
-        return NULL
-      } else if (val instanceof Date) {
-        return escapeDate(val)
-      } else {
-        throw new Error('Objects are not supported')
-      }
-    case 'symbol':
-      throw new Error(`Symbols are not supported: ${val}`)
+      return escapeObject(val)
     default:
+      // symbols and exotic types
       throw new Error(`Unsupported value type ${typeof val}: ${val}`)
   }
 }

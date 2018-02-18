@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "test": "ava",
+    "test:coverage": "nyc --reporter=html --reporter=text ava",
     "test:watch": "ava --watch"
   },
   "engines": {
@@ -15,6 +16,7 @@
   "files": ["src/*.js", "src/*.js.flow"],
   "keywords": ["soql", "escape", "sf", "salesforce", "flow"],
   "devDependencies": {
-    "ava": "^0.25.0"
+    "ava": "^0.25.0",
+    "nyc": "^11.4.1"
   }
 }
