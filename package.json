@@ -1,6 +1,6 @@
 {
   "name": "soql-escape",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A template library to escape soql queries",
   "main": "src/index.js",
   "author": "Anthony Garcia-Labiad <anthony.garlab@gmail.com>",
