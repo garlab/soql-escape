@@ -16,14 +16,14 @@ or with yarn
 
 Query with characters to escape:
 
-```
+```js
 soql`SELECT foo FROM Bar WHERE str = ${unEscapedString}`
 ```
 
 
 Query with a date:
 
-```
+```js
 soql`
     SELECT id, CreatedDate
     FROM Sales_Order__c
@@ -33,10 +33,9 @@ soql`
 
 It is also possible to import the escape function:
 
-```
+```js
 const { escape } = require('soql-escape')
 
 assert(escape('"quotes\'') === `'\\"quotes\\''`)
 
 ```
-
