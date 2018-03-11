@@ -1,0 +1,17 @@
+# https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package
+
+# Tests
+.nyc_output
+coverage
+test
+
+# CI
+.circleci
+.codeclimate.yml
+.jenkins.yml
+.travis.yml
+
+# Editor settings
+.editorconfig
+.eslintrc*
+.prettierrc

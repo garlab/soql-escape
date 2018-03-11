@@ -1,6 +1,6 @@
 {
   "name": "soql-escape",
-  "version": "0.0.0-semantic-release",
+  "version": "0.0.1",
   "description": "A template library to escape soql queries",
   "main": "src/index.js",
   "author": "Anthony Garcia-Labiad <anthony.garlab@gmail.com>",
@@ -14,7 +14,12 @@
     "node": ">=4.8.7 <5 || >=6.12.3 <7 || >=8.9.4"
   },
   "files": ["src/*.js", "src/*.js.flow"],
-  "keywords": ["soql", "escape", "sf", "salesforce", "flow"],
+  "keywords": [
+    "soql",
+    "salesforce",
+    "escape",
+    "escape-sequences"
+  ],
   "devDependencies": {
     "ava": "^0.25.0",
     "nyc": "^11.4.1"
