@@ -13,13 +13,23 @@
   "engines": {
     "node": ">=4.8.7 <5 || >=6.12.3 <7 || >=8.9.4"
   },
-  "files": ["src/*.js", "src/*.js.flow"],
+  "files": [
+    "src/*.js",
+    "src/*.js.flow"
+  ],
   "keywords": [
     "soql",
     "salesforce",
     "escape",
     "escape-sequences"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/garlab/soql-escape.git"
+  },
+  "bugs": {
+    "url": "https://github.com/garlab/soql-escape/issues/"
+  },
   "devDependencies": {
     "ava": "^0.25.0",
     "nyc": "^11.4.1"
