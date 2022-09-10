@@ -1,5 +1,5 @@
-import test from 'ava'
-import soql from '../src/soql'
+const test = require('ava')
+const soql = require('../src/soql')
 
 test('empty queries', t => {
   t.is(soql``, '')

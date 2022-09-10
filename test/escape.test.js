@@ -1,5 +1,5 @@
-import test from 'ava'
-import escape from '../src/escape'
+const test = require('ava')
+const escape = require('../src/escape')
 
 test('undefined and null are converted to NULL', t => {
   t.is(escape(null), 'NULL')
