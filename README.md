@@ -1,18 +1,24 @@
 # soql-escape
+
 Escape soql queries
 
 ## Installation
 
-    $ npm i soql-escape
+```sh
+npm i soql-escape
+```
 
 or with yarn
 
-    $ yarn add soql-escape
+```sh
+yarn add soql-escape
+```
 
 ## Usage
 
-`const { soql } = require('soql-escape')`
-
+```js
+const { soql } = require('soql-escape')
+```
 
 Query with characters to escape:
 
@@ -20,8 +26,7 @@ Query with characters to escape:
 soql`SELECT foo FROM Bar WHERE str = ${unEscapedString}`
 ```
 
-
-Query with a date:
+Query using a date:
 
 ```js
 soql`
@@ -31,11 +36,14 @@ soql`
 `
 ```
 
-It is also possible to import the escape function:
+It is also possible to import the escape function directly:
 
 ```js
 const { escape } = require('soql-escape')
 
 assert(escape('"quotes\'') === `'\\"quotes\\''`)
-
 ```
+
+## Contributing
+
+Fork this repo and create a pull-request.
