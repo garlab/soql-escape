@@ -1,6 +1,6 @@
 {
   "name": "soql-escape",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A template library to escape soql queries",
   "main": "src/index.js",
   "typings": "src/index.d.ts",
