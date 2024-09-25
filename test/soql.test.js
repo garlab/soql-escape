@@ -1,14 +1,15 @@
-const test = require('ava')
+const test = require('node:test')
+const assert = require('node:assert')
 const soql = require('../src/soql')
 
 test('empty queries', t => {
-  t.is(soql``, '')
-  t.is(soql`   `, '   ')
-  t.is(soql(null), '')
+  assert.strictEqual(soql``, '')
+  assert.strictEqual(soql`   `, '   ')
+  assert.strictEqual(soql(null), '')
 })
 
 test('query without values', t => {
-  t.is(
+  assert.strictEqual(
     soql`
     SELECT Account.Name, (SELECT Contact.LastName FROM Account.Contacts)
     FROM Account
@@ -21,7 +22,7 @@ test('query without values', t => {
 })
 
 test('query with simple values', t => {
-  t.is(
+  assert.strictEqual(
     soql`
     SELECT Id, Name, Status__c, Location__c
     FROM Property__c
@@ -42,7 +43,7 @@ test('query with simple values', t => {
 })
 
 test('query with function values', t => {
-  t.is(
+  assert.strictEqual(
     soql`
     SELECT Name, Status__c, Location__c, Main_Thumbnail__c
     FROM Property__c
@@ -61,7 +62,7 @@ test('query with function values', t => {
 })
 
 test('query with date', t => {
-  t.is(
+  assert.strictEqual(
     soql`SELECT id, CreatedDate FROM Sales_Order__c where CreatedDate < ${new Date(
       '2013-05-21T00:00:00Z'
     )}`,
