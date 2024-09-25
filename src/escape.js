@@ -1,3 +1,4 @@
+// @ts-check
 const NULL = 'NULL'
 const CHARS_ESCAPE_REGEX = /[\n\r\t\b\f"'\\]/g
 const CHARS_ESCAPE_MAP = {
@@ -11,6 +12,9 @@ const CHARS_ESCAPE_MAP = {
   '\\': '\\\\',
 }
 
+/**
+ * @param {string} val
+ */
 function escapeString(val) {
   let chunkIndex = (CHARS_ESCAPE_REGEX.lastIndex = 0)
   let escapedVal = ''
@@ -33,6 +37,9 @@ function escapeString(val) {
   return `'${escapedVal}'`
 }
 
+/**
+ * @param {Date} date
+ */
 function escapeDate(date) {
   if (isNaN(date.getTime())) {
     return NULL
@@ -44,6 +51,9 @@ function escapeDate(date) {
     .replace('.', ':')
 }
 
+/**
+ * @param {object | null} obj
+ */
 function escapeObject(obj) {
   if (obj === null) {
     return NULL
@@ -56,6 +66,10 @@ function escapeObject(obj) {
   throw new Error('Objects are not supported')
 }
 
+/**
+ * @param {unknown} val 
+ * @returns {string}
+ */
 function escape(val) {
   switch (typeof val) {
     case 'undefined':
