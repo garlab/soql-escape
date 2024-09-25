@@ -7,9 +7,8 @@
   "author": "Anthony Garcia-Labiad <anthony.garlab@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "ava",
-    "test:coverage": "nyc --reporter=html --reporter=text ava",
-    "test:watch": "ava --watch"
+    "test": "node --test",
+    "test:watch": "node --test --watch"
   },
   "files": [
     "src/*.js",
@@ -28,9 +27,5 @@
   },
   "bugs": {
     "url": "https://github.com/garlab/soql-escape/issues/"
-  },
-  "devDependencies": {
-    "ava": "^4.3.3",
-    "nyc": "^15.1.0"
   }
 }

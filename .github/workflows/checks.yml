@@ -1,0 +1,17 @@
+name: Branch checks
+
+on:
+  push:
+
+jobs:
+  checks:
+    name: Checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+      - run: npm test
