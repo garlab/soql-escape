@@ -6,10 +6,7 @@ coverage
 test
 
 # CI
-.circleci
-.codeclimate.yml
-.jenkins.yml
-.travis.yml
+.github
 
 # Editor settings
 .editorconfig
