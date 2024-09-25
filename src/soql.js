@@ -1,5 +1,10 @@
+// @ts-check
 const escape = require('./escape')
 
+/**
+ * @param {string[] | null} strings
+ * @param  {...unknown} values
+ */
 function soql(strings, ...values) {
   if (strings == null || strings.length === 0) {
     return ''
